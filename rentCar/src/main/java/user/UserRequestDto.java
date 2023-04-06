@@ -12,6 +12,14 @@ public class UserRequestDto {
 		this.contact = contact;
 		this.joindate = joindate;
 	}
+	
+	public UserRequestDto(String name, String id, String password, String contact, String joindate) {
+		this.name = name;
+		this.id = id;
+		this.password = password;
+		this.contact = contact;
+		this.joindate = joindate;
+	}
 
 	public int getUser_code() {
 		return user_code;

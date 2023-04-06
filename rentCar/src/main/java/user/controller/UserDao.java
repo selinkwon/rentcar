@@ -3,6 +3,7 @@ package user.controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 
 import user.User;
@@ -25,16 +26,15 @@ public class UserDao {
 		
 		this.conn = DBManager.getConnection();
 		if(this.conn != null) {
-			String sql = "INSERT INTO users VALUES(?,?,?,?,?,TO_DATE(?,'YYYY-MM-DD'))";	
+			String sql = "INSERT INTO users (name,id,password,contact,joindate) VALUES(?,?,?,?,TO_DATE(?,'YYYY-MM-DD'))";	
 		try {			
 			this.pstmt = this.conn.prepareStatement(sql);
 			
-			this.pstmt.setInt(1, user.getUser_code());
-			this.pstmt.setString(2, user.getName());
-			this.pstmt.setString(3, user.getId());
-			this.pstmt.setString(4, user.getPassword());
-			this.pstmt.setString(5, user.getContact());
-			this.pstmt.setString(6, user.getJoindate());
+			this.pstmt.setString(1, user.getName());
+			this.pstmt.setString(2, user.getId());
+			this.pstmt.setString(3, user.getPassword());
+			this.pstmt.setString(4, user.getContact());
+			this.pstmt.setString(5, user.getJoindate());
 			
 			this.pstmt.execute();
 		} catch (Exception e) {
@@ -75,6 +75,40 @@ public class UserDao {
 		return user;
 	}
 	
+	public User getUserById(String id) {
+		User user = null;
+
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
+			try {
+				String sql = "SELECT * FROM users WHERE id=? ";
+
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setString(1, id);
+				this.rs = this.pstmt.executeQuery();
+
+				while (this.rs.next()) {
+					// 유저 초기화 
+					int code = this.rs.getInt(1);
+					// String id = this.rs.getString(2);
+					// id 는 필요 x 컬럼 건너뛰기 때문에 인덱스는 그대로 
+					String password = this.rs.getString(3);
+					String name = this.rs.getString(4);
+					String contact = this.rs.getString(5);
+					String regDate = this.rs.getString(6);
+					
+					user = new User(code, id, password, name, contact, regDate);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+		}
+		return user;
+	}
+	
 	public ArrayList<User> getUserAll() {
 		ArrayList<User> list = new ArrayList<>();
 
@@ -88,7 +122,7 @@ public class UserDao {
 
 				while (this.rs.next()) {
 					User user = null;
-					int user_code = this.getUser_codeMax()+1;
+					int user_code = this.getUserCodeMax()+1;
 					String name = this.rs.getString(2);
 					String id = this.rs.getString(3);
 					String password = this.rs.getString(4);
@@ -109,7 +143,7 @@ public class UserDao {
 		return list;
 	}
 	
-	public int getUser_codeMax() {
+	public int getUserCodeMax() {
 		int userCode = 1001;
 		
 		this.conn = DBManager.getConnection();

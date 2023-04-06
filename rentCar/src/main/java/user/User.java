@@ -17,9 +17,17 @@ public class User {
 		this.joindate = joindate;
 	}
 	
+	public User(String name, String id, String password, String contact, String joindate) {
+		this.name = name;
+		this.id = id;
+		this.password = password;
+		this.contact = contact;
+		this.joindate = joindate;
+	}
+	
 	public User(UserRequestDto userDto) {
 		UserDao userDao =  UserDao.getInstance();
-		this.user_code = userDao.getUser_codeMax()+1;
+		this.user_code = userDao.getUserCodeMax()+1;
 		this.name = userDto.getName();
 		this.id = userDto.getId();
 		this.password = userDto.getPassword();
