@@ -5,12 +5,16 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>A-D gar car</title>
 </head>
 <body>
-<%
+<%--
 DBManager.getConnectionFromMySQL();
-%>
-
+--%>
+<jsp:include page="views/header.jsp" />
+<section>
+</section>
+<jsp:include page="views/aside.jsp" />
+<jsp:include page="views/footer.jsp" />
 </body>
 </html>
