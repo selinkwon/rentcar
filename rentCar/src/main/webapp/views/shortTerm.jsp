@@ -31,6 +31,7 @@
 			<tbody>
 				<tr>
 					<th></th>
+					<th></th>
 					<th>차이름</th>
 					<th>가격</th>
 					<th>선택</th>
@@ -47,7 +48,7 @@
 					<td><input type="image" src="<%=list.get(i).getImagePath()%>"></td>
 					<td style="text-align: center"><%=list.get(i).getName()%></td>
 					<td style="text-align: center"><%=list.get(i).getPrice()%></td>
-					<td><input type="radio" name="check"
+					<td><input type="radio" id="check" name="check"
 						value="<%=list.get(i).getName() %>" onclick='getCarValue(event)' required></td>
 				</tr>
 

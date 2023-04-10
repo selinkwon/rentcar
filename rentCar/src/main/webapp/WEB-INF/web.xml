@@ -140,6 +140,17 @@
 		<url-pattern>/board</url-pattern>
 	</servlet-mapping>
 	
+	
+	<servlet>
+		<servlet-name>content</servlet-name>
+		<jsp-file>/views/content.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>content</servlet-name>
+		<url-pattern>/content</url-pattern>
+	</servlet-mapping>
+	
 
 
 </web-app>

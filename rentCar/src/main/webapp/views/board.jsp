@@ -1,3 +1,6 @@
+<%@page import="board.Board"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="board.controller.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,9 +18,28 @@
 			<table>
 				<tbody>
 				<tr>
-				<th>
-				</th>
+				<th>게시글번호</th>
+				<th>게시글제목</th>
+				<th>작성자</th>
+				<th>등록일</th>
 				</tr>
+				<%
+				BoardDao boardDao = BoardDao.getInstance();
+				ArrayList<Board> list = boardDao.getBoardAll();
+				for(int i=0;i<list.size();i++){
+					System.out.println(list.get(i).getUserCode());
+				%>
+				<tr>
+				<td><%=list.get(i).getContentNum() %></td>
+				<td><a href="content"><%=list.get(i).getTitle()%></a></td>
+				<td><%=list.get(i).getName() %></td>
+				<td><%=list.get(i).getAddDate() %></td>
+				<input type="hidden" value="<%=list.get(i).getUserCode() %>">
+				</tr>
+				
+				<%
+				}
+				%>
 				</tbody>
 			</table>
 			<input type="submit" value="작성">
