@@ -9,8 +9,8 @@
 <body>
 	<%
 	session.removeAttribute("log");
-	response.sendRedirect("login.jsp");
+	request.setAttribute("logout", true);
+	request.getRequestDispatcher("/").forward(request, response);
 	%>
-	<script src="../resources/logout.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 function checkValues(htmlForm) {
 
-	let url = "join.jsp?";
+	let url = "join?";
 
 	const name = document.getElementById("name").value;
 	const id = document.getElementById("id").value;

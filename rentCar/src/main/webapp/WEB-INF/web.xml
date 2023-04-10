@@ -9,4 +9,137 @@
     <welcome-file>default.jsp</welcome-file>
     <welcome-file>default.htm</welcome-file>
   </welcome-file-list>
+  <servlet-mapping>
+		<servlet-name>Service</servlet-name>
+		<url-pattern>/Service</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>Service</servlet-name>
+		<servlet-class>controller.Service</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>join</servlet-name>
+		<jsp-file>/views/join.jsp</jsp-file>
+	</servlet>
+	
+
+	<servlet-mapping>
+		<servlet-name>join</servlet-name>
+		<url-pattern>/join</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>mypage</servlet-name>
+		<jsp-file>/views/mypage.jsp</jsp-file>
+	</servlet>	
+
+	<servlet-mapping>
+		<servlet-name>mypage</servlet-name>
+		<url-pattern>/mypage</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<servlet>
+		<servlet-name>logOut</servlet-name>
+		<jsp-file>/views/logOut.jsp</jsp-file>
+	</servlet>	
+
+	<servlet-mapping>
+		<servlet-name>logOut</servlet-name>
+		<url-pattern>/logOut</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<servlet>
+		<servlet-name>logIn</servlet-name>
+		<jsp-file>/views/logIn.jsp</jsp-file>
+	</servlet>	
+
+	<servlet-mapping>
+		<servlet-name>logIn</servlet-name>
+		<url-pattern>/logIn</url-pattern>
+	</servlet-mapping>	
+	
+	
+	<servlet>
+		<servlet-name>aside</servlet-name>
+		<jsp-file>/views/aside.jsp</jsp-file>
+	</servlet>	
+
+	<servlet-mapping>
+		<servlet-name>aside</servlet-name>
+		<url-pattern>/aside</url-pattern>
+	</servlet-mapping>	
+	
+	
+
+	<servlet>
+		<servlet-name>header</servlet-name>
+		<jsp-file>/views/header.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>header</servlet-name>
+		<url-pattern>/header</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>footer</servlet-name>
+		<jsp-file>/views/footer.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>footer</servlet-name>
+		<url-pattern>/footer</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>shortTerm</servlet-name>
+		<jsp-file>/views/shortTerm.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>shortTerm</servlet-name>
+		<url-pattern>/shortTerm</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>booking</servlet-name>
+		<jsp-file>/views/booking.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>booking</servlet-name>
+		<url-pattern>/booking</url-pattern>
+	</servlet-mapping>
+	
+	
+	<servlet>
+		<servlet-name>longTerm</servlet-name>
+		<jsp-file>/views/longTerm.jsp</jsp-file>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>longTerm</servlet-name>
+		<url-pattern>/longTerm</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>board</servlet-name>
+		<jsp-file>/views/board.jsp</jsp-file>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>board</servlet-name>
+		<url-pattern>/board</url-pattern>
+	</servlet-mapping>
+	
+
+
 </web-app>

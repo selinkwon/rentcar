@@ -1,11 +1,11 @@
 package user;
 
 public class UserRequestDto {
-	private int user_code;
+	private int userCode;
 	private String name,id,password,contact,joindate;
 
-	public UserRequestDto(int user_code, String name, String id, String password, String contact, String joindate) {
-		this.user_code = user_code;
+	public UserRequestDto(int userCode, String name, String id, String password, String contact, String joindate) {
+		this.userCode = userCode;
 		this.name = name;
 		this.id = id;
 		this.password = password;
@@ -21,12 +21,12 @@ public class UserRequestDto {
 		this.joindate = joindate;
 	}
 
-	public int getUser_code() {
-		return user_code;
+	public int getUserCode() {
+		return userCode;
 	}
 
-	public void setUser_code(int user_code) {
-		this.user_code = user_code;
+	public void setUserCode(int userCode) {
+		this.userCode = userCode;
 	}
 
 	public String getName() {

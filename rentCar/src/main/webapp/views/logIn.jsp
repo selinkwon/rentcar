@@ -4,20 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>로그인</title>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="header" />
 	<section>
 		<h2>로그인</h2>
 		<form method="post" action="../Service">
 			<input type="hidden" name="command" value="login">
-			<h3>아이디 :<input type="text" id="id"></h3>
-			<h3>비밀번호 :<input type="text" id="password"></h3>
-			<input type="button" value="로그인">
+			<input type="text" name="id" id="id" required placeholder="id" required><br>
+			<input type="password" name="password" id="password" required placeholder="password" required><br>
+			<input type="submit" value="로그인">
 		</form>
 	</section>
-	<jsp:include page="aside.jsp" />
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="aside" />
+	<jsp:include page="footer" />
 </body>
 </html>

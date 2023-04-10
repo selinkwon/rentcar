@@ -13,7 +13,7 @@ import javax.sql.DataSource;
 
 
 public class DBManager {
-	public static Connection getConnectionFromMySQL() {
+	public static Connection getConnection() {
 		Connection conn = null;
 		
 		try {
@@ -38,23 +38,7 @@ public class DBManager {
 		return conn;
 	}
 	
-	public static Connection getConnection() {
-		Connection conn = null;
 
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		String userName = "C##SYSTEM";
-		String password = "1234";
-
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection(url, userName, password);
-			System.out.println("DB 연동 성공");
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("DB 연동 실패");
-		}
-		return conn;
-	}
 
 	public static void close(Connection conn, PreparedStatement pstmt) {
 		try {

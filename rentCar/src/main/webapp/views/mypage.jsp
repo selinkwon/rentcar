@@ -9,26 +9,26 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<jsp:include page="header.jsp" />
+	<jsp:include page="header" />
 	<section>
-		<form method="post" action="../Service">
-			<input type="hidden" name="command" value="join">
-			<%
-			String id = request.getParameter("id");
+		<%
+		User user = (User) session.getAttribute("log");
 		
-			UserDao userDao = UserDao.getInstance();
-			User user = userDao.getUserById(id);
-
-			%>
-			<input type="text" name="id" value=<%=user.getId()%>> <input
-				type="text" name="password" value=<%=user.getPassword()%>> <input
-				type="text" name="name" value=<%=user.getName()%>> <input
-				type="text" name="contact" value=<%=user.getContact()%>> <input
-				type="date" name="joindate" value=<%=user.getJoindate()%>> <input
-				type="submit" value="수정">
+		%>
+		<h2>회원정보수정</h2>
+		<form method="post" action="../Service">
+			<input type="hidden" name="command" value="update"> 
+			<input type="hidden" name="userCode" value="<%=user.getUser_code()%>">
+			<input type="text" name="id" value=<%=user.getId()%> readonly="<%=user.getId()%>"> <br><input
+				type="text" name="password" value=<%=user.getPassword()%>><br> 
+			<input type="text" name="name" value=<%=user.getName()%>><br> 
+			<input type="text" name="contact" value=<%=user.getContact()%>><br> 
+			<input type="date" name="joindate" value=<%=user.getJoindate()%> readonly="<%=user.getJoindate()%>"><br> 
+			<input type="submit" value="수정">
+			<input type="button" value="탈퇴" onclick="location.href='../Service?command=delete&userCode=<%=user.getUser_code()%>'">
 		</form>
 	</section>
-	<jsp:include page="aside.jsp" />
-	<jsp:include page="footer.jsp" />
+	<jsp:include page="aside" />
+	<jsp:include page="footer" />
 </body>
 </html>

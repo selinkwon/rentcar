@@ -5,11 +5,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="../resources/style.css"><style>
-  @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+  
 </style>
 <title>Insert title here</title>
 </head>
@@ -25,15 +23,15 @@
 	if (log != null) {
 	%>
 	<ul id="logout">
-		<li id="login"><a href="../views/logOut.jsp">로그아웃</a></li>
-		<li>| <a href="../views/mypage.jsp">마이페이지</a></li>
+		<li id="login"><a href="logOut">로그아웃</a></li>
+		<li>| <a href="mypage">마이페이지</a></li>
 	</ul>
 	<%
 	} else {
 	%>
 	<ul id="join">
-		<li id="login"><a href="views/logIn.jsp">로그인</a></li>
-		<li>| <a href="views/join.jsp">회원가입</a></li>
+		<li id="login"><a href="logIn">로그인</a></li>
+		<li>| <a href="join">회원가입</a></li>
 	</ul>
 	<%
 	}
@@ -41,9 +39,9 @@
 
 	<nav>
 		<ul id="menu">
-			<li>단기 렌트카</li>
-			<li>장기 렌트카</li>
-			<li>커뮤니티</li>
+			<li><a href="shortTerm">단기 렌트카</a></li>
+			<li><a href="longTerm">장기 렌트카</a></li>
+			<li><a href="board">CAR뮤니티</a></li>
 		</ul>
 	</nav>
 </body>

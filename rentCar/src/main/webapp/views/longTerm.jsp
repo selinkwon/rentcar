@@ -3,15 +3,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel = "stylesheet" href="resources/style.css">
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<aside>
-<ul>
-<li>문의하기</li>
-</ul>
-</aside>
+
 </body>
 </html>
