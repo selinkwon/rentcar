@@ -52,4 +52,33 @@ public class BoardDao {
 		}
 		return list;
 	}
+
+	public Board getBoardByContentNum(int contentNum) {
+		Board board = null;
+		this.conn = DBManager.getConnection();
+		if (this.conn != null) {
+			try {
+				String sql = "SELECT * FROM board WHERE content_num = ?";
+				this.pstmt = this.conn.prepareStatement(sql);
+				this.pstmt.setInt(1, contentNum);
+				this.rs = this.pstmt.executeQuery();
+
+				while (this.rs.next()) {
+					int userCode = this.rs.getInt(2);
+					String name = this.rs.getString(3);
+					String content = this.rs.getString(4);
+					String title = this.rs.getString(5);
+					String addDate = this.rs.getString(6);
+
+					board = new Board(contentNum, userCode, name, content, title, addDate);
+				}
+
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager.close(conn, pstmt, rs);
+			}
+		}
+		return board;
+	}
 }

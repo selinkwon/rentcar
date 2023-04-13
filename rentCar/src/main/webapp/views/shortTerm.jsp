@@ -54,14 +54,15 @@
 
 				<%
 					}
-					}
-					}
-					%>
+					}%>
 
 			</tbody>
 		</table>
 		<h3 id="checkedCar"></h3>
 		<input type="submit" value="예약하기" >
+					<%
+					}
+					%>
 		</form>
 	</section>
 	<jsp:include page="aside" />

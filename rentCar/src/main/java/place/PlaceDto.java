@@ -5,6 +5,8 @@ public class PlaceDto {
 	
 	private String placeName, placeCode;
 	
+	public PlaceDto() {}
+	
 	public PlaceDto(String placeCode, String placeName) {
 		this.placeCode = placeCode;
 		this.placeName = placeName;

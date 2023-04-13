@@ -60,6 +60,25 @@ tbody,tr,td,th{
 	text-align:center;
 }
 
+#content{
+	display : flex;
+	flex-wrap : wrap;
+	width : 800px;
+	height : 30px;
+	border : solid 1px black;
+	justify-content: space-around;
+	align-content: center;
+}
+
+#boardcontent{
+	display : flex;
+	width : 800px;
+	height : 500px;
+	border : solid 1px black;
+    justify-content: center;
+    margin-bottom : 10px; 
+}
+
 aside {
 	grid-area: aside;
 	margin-top: 10%;

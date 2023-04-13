@@ -4,6 +4,9 @@ public class UserRequestDto {
 	private int userCode;
 	private String name,id,password,contact,joindate;
 
+	public UserRequestDto(String name) {
+		this.name = name;
+	}
 	public UserRequestDto(int userCode, String name, String id, String password, String contact, String joindate) {
 		this.userCode = userCode;
 		this.name = name;

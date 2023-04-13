@@ -1,6 +1,7 @@
 <%@page import="util.DBManager"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,7 +32,9 @@
 	<%
 	}
 	%>
-	<section></section>
+	<section>
+
+	</section>
 	<jsp:include page="aside" />
 	<jsp:include page="footer" />
 </body>

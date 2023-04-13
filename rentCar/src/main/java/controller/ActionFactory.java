@@ -1,6 +1,7 @@
 package controller;
 
 import controller.action.Action;
+import controller.action.BoardAction;
 import controller.action.BookingAction;
 import controller.action.DeleteAction;
 import controller.action.JoinAction;
@@ -35,7 +36,10 @@ public class ActionFactory {
 		}
 		else if(command.equals("booking")){
 			action = new BookingAction();
-		};
+		}
+		else if(command.equals("board")) {
+			action = new BoardAction();
+		}
 		return action;
 	}
 }

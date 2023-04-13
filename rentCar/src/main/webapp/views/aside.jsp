@@ -11,6 +11,7 @@
 <aside>
 <ul>
 <li>문의하기</li>
+<li>공지사항</li>
 </ul>
 </aside>
 </body>

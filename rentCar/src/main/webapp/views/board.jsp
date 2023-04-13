@@ -31,10 +31,9 @@
 				%>
 				<tr>
 				<td><%=list.get(i).getContentNum() %></td>
-				<td><a href="content"><%=list.get(i).getTitle()%></a></td>
+				<td><a href="content?userCode=<%=list.get(i).getUserCode() %>&contentNum=<%=list.get(i).getContentNum() %>"><%=list.get(i).getTitle()%></a></td>
 				<td><%=list.get(i).getName() %></td>
 				<td><%=list.get(i).getAddDate() %></td>
-				<input type="hidden" value="<%=list.get(i).getUserCode() %>">
 				</tr>
 				
 				<%
